@@ -3,14 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Collection;
 
-class ProductController extends Controller
+class ProductsController extends Controller
 {
-   
-    public function index()
+    public function __construct()
     {
-       return response()->json(Product::all(), 200);
+        $this->middleware('auth')->except(['index', 'show', 'slug']);
+    }
+    public function index(Product $products)
+    {
+       
+        $categories = Category::all();
+        return view('pages.all-products', [
+            'products' => $products->paginate(6),
+            'categories' => $categories,
+        ]);
     }
 
     public function store(Request $request)
@@ -24,26 +34,32 @@ class ProductController extends Controller
         ]);
 
         return response()->json([
-            'status'=> (bool)$product,
+            'status' => (bool) $product,
             'data' => $product,
             'message' => $product ? 'Product Created!' : 'Error Creating Product'
         ]);
-
     }
-
-    
+    public function slug(Category $category)
+    {
+        $categoryProducts  = $category->products()->get();
+        return view('pages.categories-product', [
+            'categoryProducts' => $categoryProducts ,
+        ]);
+    }
     public function show(Product $product)
     {
-        return response()->json($product, 200);
+        return view('pages.single-product', [
+            'product' => $product
+        ]);
     }
 
     public function uploadFile(Request $request)
     {
-        if($request->hasFile('image')){
-            $name = time()."_".$request->file('image')->getClientOriginalName();
+        if ($request->hasFile('image')) {
+            $name = time() . "_" . $request->file('image')->getClientOriginalName();
             $request->file('image')->move(public_path('images'), $name);
         }
-        return response()->json(asset("images/$name"),201);
+        return response()->json(asset("images/$name"), 201);
     }
 
     public function update(Request $request, Product $product)
@@ -64,7 +80,7 @@ class ProductController extends Controller
         $status = $product->save();
 
         return response()->json([
-            'status'=> $status,
+            'status' => $status,
             'message' => $status ? 'United Added!' : 'Error Updating Units'
         ]);
     }
@@ -75,8 +91,19 @@ class ProductController extends Controller
         $status = $product->delete();
 
         return response()->json([
-            'status'=> $status,
-            'message'=> $status ? 'Product Deleted!' : 'Error Deleting Product'
+            'status' => $status,
+            'message' => $status ? 'Product Deleted!' : 'Error Deleting Product'
         ]);
+    }
+
+    /**
+     * Ajax array of Products paginated
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function apiProductsPaginated()
+    {
+        $products = Product::paginate(6);
+        return response()->json($products, 200);
     }
 }

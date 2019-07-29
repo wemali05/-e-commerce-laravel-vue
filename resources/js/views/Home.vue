@@ -1,58 +1,64 @@
     <template>
-        <div>
-            <div class="container-fluid hero-section d-flex align-content-center justify-content-center flex-wrap ml-auto">
-                <h2 class="title">Welcome to the bigStore</h2>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-4 product-box" v-for="(product,index) in products" v-bind:key="index">
-                                <router-link :to="{ path: '/products/'+product.id}">
-                                    <img :src="product.image" :alt="product.name">
-                                    <h5><span v-html="product.name"></span>
-                                        <span class="small-text text-muted float-right">$ {{product.price}}</span>
-                                    </h5>
-                                    <button class="col-md-4 btn btn-sm btn-primary float-right">Buy Now</button>
-                                </router-link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </template>
+	<div class="container">
 
-    <script>
-        export default {
-            data(){
-                return {
-                    products : []
-                }
-            },
-            mounted(){
-                axios.get("api/products/").then(response => this.products = response.data)      
-            }
-        }
-    </script>
 
-        <style scoped>
-    .small-text {
-        font-size: 14px;
-    }
-    .product-box {
-        border: 1px solid #cccccc;
-        padding: 10px 15px;
-    }
-    .hero-section {
-        height: 10vh;
-        background: #427546;
-        align-items: center;
-        margin-bottom: 20px;
-        margin-top: -20px;
-    }
-    .title {
-        font-size: 60px;
-        color: #ffffff;
-    }
-    </style>
+		
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-4 product-box" v-for="(product,index) in products" :key="index">
+							<a :href="`/products/${product.id}`">
+								<img :src="product.image" :alt="product.name" />
+								<h5>
+									<span v-html="product.name"></span>
+									<span class="small-text text-muted float-right">$ {{product.price}}</span>
+								</h5>
+								<button class="col-md-4 btn btn-sm btn-primary float-right">Buy Now</button>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		<pagination-component :pagination="pagination" @paginate="fetchProducts()" :offset="4"></pagination-component>
+	</div>
+</template>
+
+<script>
+export default {
+	props: {
+		products: {
+			type: Array,
+			required: true
+		}
+	},
+	data: function() {
+		return {
+			products: {},
+			pagination: {},
+			productsLoading: false
+		}
+	},
+	created() {
+		this.fetchProperties()
+	},
+	methods: {
+		fetchProducta() {
+			this.productsLoading = true
+			axios
+				.get('/api/products' + '/?page=' + this.pagination.current_page)
+				.then(resp => {
+					this.productsLoading = false
+					// this.products = resp.data.data
+					this.pagination = resp.data
+				})
+				.catch(err => {
+					this.productsLoading = false
+				})
+		
+		}
+	}
+	
+}
+</script>
+
