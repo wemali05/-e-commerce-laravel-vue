@@ -36964,7 +36964,7 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/user/Documents/code/bigStore/resources/js/bootstrap.js */"./resources/js/bootstrap.js");
+module.exports = __webpack_require__(/*! /home/kip/e-commerce-laravel-vue/resources/js/bootstrap.js */"./resources/js/bootstrap.js");
 
 
 /***/ })
