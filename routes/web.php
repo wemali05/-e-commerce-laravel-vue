@@ -16,7 +16,7 @@ use App\Category;
 
 Auth::routes();
 Route::get('/', 'ProductsController@index');
-Route::get('/products/', 'ProductsController@show');
+Route::get('/products/{product}', 'ProductsController@show');
 Route::get('/products/{category}',  'ProductsController@slug');
 
 Route::get('/checkout/{product}', function (Product $product) {
