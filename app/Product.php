@@ -12,8 +12,14 @@ class Product extends Model
     protected $fillable = [
         'name', 'price', 'units', 'description', 'image'
     ];
+    protected $with = ['category'];
 
-    public function orders(){
+    public function orders()
+    {
         return $this->hasMany(Order::class);
+    }
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }

@@ -1,5 +1,8 @@
 <?php
 
+use App\Product;
+use App\Category;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,11 +14,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Auth::routes();
+Route::get('/', 'ProductsController@index');
+Route::get('/products/', 'ProductsController@show');
+Route::get('/products/{category}',  'ProductsController@slug');
+
+Route::get('/checkout/{product}', function (Product $product) {
+    return view('pages.checkout', [
+        'product' => $product
+    ]);
 });
-
-Route::get('/{any}', function(){
-    return view('landing');
-})->where('any', '.*');
-
