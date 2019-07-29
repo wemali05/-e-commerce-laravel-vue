@@ -1228,7 +1228,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.small-text[data-v-63cd6604] {\n    font-size: 14px;\n}\n.product-box[data-v-63cd6604] {\n    border: 1px solid #cccccc;\n    padding: 10px 15px;\n}\n.hero-section[data-v-63cd6604] {\n    height: 30vh;\n    background: #ababab;\n    align-items: center;\n    margin-bottom: 20px;\n    margin-top: -20px;\n}\n.title[data-v-63cd6604] {\n    font-size: 60px;\n    color: #ffffff;\n}\n", ""]);
+exports.push([module.i, "\n.small-text[data-v-63cd6604] {\n    font-size: 14px;\n}\n.product-box[data-v-63cd6604] {\n    border: 1px solid #cccccc;\n    padding: 10px 15px;\n}\n.hero-section[data-v-63cd6604] {\n    height: 10vh;\n    background: #427546;\n    align-items: center;\n    margin-bottom: 20px;\n    margin-top: -20px;\n}\n.title[data-v-63cd6604] {\n    font-size: 60px;\n    color: #ffffff;\n}\n", ""]);
 
 // exports
 
@@ -1266,7 +1266,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.small-text[data-v-2f42e64c] { font-size: 14px;\n}\n.product-box[data-v-2f42e64c] { border: 1px solid #cccccc; padding: 10px 15px;\n}\n.hero-section[data-v-2f42e64c] { background: #ababab; height: 20vh; align-items: center; margin-bottom: 20px; margin-top: -20px;\n}\n.title[data-v-2f42e64c] { font-size: 60px; color: #ffffff;\n}\n", ""]);
+exports.push([module.i, "\n.small-text[data-v-2f42e64c] { font-size: 14px;\n}\n.product-box[data-v-2f42e64c] { border: 1px solid #cccccc; padding: 10px 15px;\n}\n.hero-section[data-v-2f42e64c] { background: #427546; height: 10vh; align-items: center; margin-bottom: 20px; margin-top: -20px;\n}\n.title[data-v-2f42e64c] { font-size: 60px; color: #ffffff;\n}\n", ""]);
 
 // exports
 
@@ -2664,7 +2664,7 @@ var render = function() {
       _c(
         "tbody",
         _vm._l(_vm.orders, function(order, index) {
-          return _c("tr", { on: { key: index } }, [
+          return _c("tr", { key: index }, [
             _c("td", [_vm._v(_vm._s(index + 1))]),
             _vm._v(" "),
             _c("td", { domProps: { innerHTML: _vm._s(order.product.name) } }),
@@ -3636,7 +3636,7 @@ var render = function() {
             _vm._l(_vm.products, function(product, index) {
               return _c(
                 "div",
-                { staticClass: "col-md-4 product-box", on: { key: index } },
+                { key: index, staticClass: "col-md-4 product-box" },
                 [
                   _c(
                     "router-link",
@@ -4192,7 +4192,7 @@ var staticRenderFns = [
       "div",
       {
         staticClass:
-          "container-fluid hero-section d-flex align-content-center justify-content-center flex-wrap ml-auto"
+          "container-fluid hero-section d-flex  align-content-center justify-content-center flex-wrap ml-auto"
       },
       [_c("h2", { staticClass: "title" }, [_vm._v("All your orders")])]
     )

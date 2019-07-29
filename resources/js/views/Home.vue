@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row">
-                            <div class="col-md-4 product-box" v-for="(product,index) in products" @key="index">
+                            <div class="col-md-4 product-box" v-for="(product,index) in products" v-bind:key="index">
                                 <router-link :to="{ path: '/products/'+product.id}">
                                     <img :src="product.image" :alt="product.name">
                                     <h5><span v-html="product.name"></span>
@@ -45,8 +45,8 @@
         padding: 10px 15px;
     }
     .hero-section {
-        height: 30vh;
-        background: #ababab;
+        height: 10vh;
+        background: #427546;
         align-items: center;
         margin-bottom: 20px;
         margin-top: -20px;

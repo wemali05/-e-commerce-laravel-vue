@@ -1,6 +1,6 @@
  <template>
         <div>
-            <div class="container-fluid hero-section d-flex align-content-center justify-content-center flex-wrap ml-auto">
+            <div class="container-fluid hero-section d-flex  align-content-center justify-content-center flex-wrap ml-auto">
                 <h2 class="title">All your orders</h2>
             </div>
             <div class="container">
@@ -50,6 +50,6 @@
     <style scoped>
     .small-text { font-size: 14px; }
     .product-box { border: 1px solid #cccccc; padding: 10px 15px; }
-    .hero-section { background: #ababab; height: 20vh; align-items: center; margin-bottom: 20px; margin-top: -20px; }
+    .hero-section { background: #427546; height: 10vh; align-items: center; margin-bottom: 20px; margin-top: -20px; }
     .title { font-size: 60px; color: #ffffff; }
     </style>
