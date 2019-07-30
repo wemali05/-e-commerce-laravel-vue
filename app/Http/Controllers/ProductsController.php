@@ -101,9 +101,9 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function apiProductsPaginated()
-    {
-        $products = Product::paginate(6);
-        return response()->json($products, 200);
-    }
+    // public function apiProductsPaginated()
+    // {
+    //     $products = Product::paginate(6);
+    //     return response()->json($products, 200);
+    // }
 }

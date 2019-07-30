@@ -10,8 +10,8 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="row">
-                    @foreach($products as $product)
-						<div class="col-md-4 product-box">
+          @foreach($products as $product)
+						<div class="col-md-3 product-box">
                         
 							<a href="/products/{{$product->id}}">
 								<img src="{{$product->image}}" alt="{{$product->name}}" />
@@ -23,7 +23,7 @@
 							</a>
                           
 						</div>
-                        @endforeach 
+           @endforeach 
 					</div>
 				</div>
 			</div>

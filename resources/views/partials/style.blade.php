@@ -1,11 +1,18 @@
 <style>
-
 .small-text {
 	font-size: 14px;
 }
 .product-box {
 	border: 1px solid #cccccc;
-	padding: 10px 15px;
+	/* padding: 10px 15px; */
+	margin: 20px;
+}
+img {
+  width: 297px;
+  margin-top: 10px;
+}
+.product-box  a{
+  
 }
 .hero-section {
 	height: 10vh;
@@ -26,4 +33,42 @@
 	border-radius: 20px;
 	transition: 0.3s;
 }
+
+div.elementor {
+  background-color: #c4e1f7;
+  padding: 50px 0px 15px;
+}
+
+div.elementor-widget-container{
+  
+}
+
+ul.elementor-icon-list-items{
+  text-align: center;
+  display: inline;
+  
+}
+li.elementor-icon-list-item{
+  float: right;
+}
+span.elementor-icon-list-text{
+  margin: 0px 17.5px;
+  padding:0px 0px 0px 5px;
+}
+
+.elementor-4013 .elementor-element.elementor-element-b82ba97 .elementor-divider {
+    text-align: center;
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+.elementor-widget-divider .elementor-divider {
+    line-height: 0;
+    font-size: 0;
+}
+.elementor *, .elementor :after, .elementor :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 </style>
+
