@@ -1,4 +1,4 @@
-    <template>
+<template>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 offset-md-2">
@@ -8,7 +8,7 @@
 					<p class="small-text text-muted float-left">$ {{product.price}}</p>
 					<p class="small-text text-muted float-right">Available Units: {{product.units}}</p>
 					<br />
-					<hr />
+					<hr>
 					<label class="row">
 						<span class="col-md-2 float-left">Quantity:</span>
 						<input
@@ -24,12 +24,9 @@
 				</div>
 				<br />
 				<div>
-					<div v-if="!isLoggedIn">
-						<h2>You need to login to continue</h2>
-						<button class="col-md-4 btn btn-primary float-left" @click="login">Login</button>
-						<button class="col-md-4 btn btn-danger float-right" @click="register">Create an account</button>
-					</div>
-					<div v-if="isLoggedIn">
+
+					<div>
+
 						<div class="row">
 							<label for="address" class="col-md-3 col-form-label">Delivery Address</label>
 							<div class="col-md-9">
@@ -39,7 +36,7 @@
 						<br />
 						<button
 							class="col-md-4 btn btn-sm btn-success float-right"
-							v-if="isLoggedIn"
+
 							@click="placeOrder"
 						>Continue</button>
 					</div>
@@ -54,45 +51,22 @@ export default {
 	props: {
 		product: {
 			type: Object,
-			required: true
+			// required: true
 		}
 	},
 	data() {
 		return {
 			address: '',
 			quantity: 1,
-			isLoggedIn: null,
-			product: []
+			the_product: {}
 		}
 	},
-	mounted() {
-		this.isLoggedIn = localStorage.getItem('bigStore.jwt') != null
+	created(){
+		this.the_product = this.product
 	},
-	beforeMount() {
-		axios
-			.get(`/api/products/${this.pid}`)
-			.then(response => (this.product = response.data))
 
-		if (localStorage.getItem('bigStore.jwt') != null) {
-			this.user = JSON.parse(localStorage.getItem('bigStore.user'))
-			axios.defaults.headers.common['Content-Type'] = 'application/json'
-			axios.defaults.headers.common['Authorization'] =
-				'Bearer ' + localStorage.getItem('bigStore.jwt')
-		}
-	},
 	methods: {
-		login() {
-			this.$router.push({
-				name: 'login',
-				params: { nextUrl: this.$route.fullPath }
-			})
-		},
-		register() {
-			this.$router.push({
-				name: 'register',
-				params: { nextUrl: this.$route.fullPath }
-			})
-		},
+
 		placeOrder(e) {
 			e.preventDefault()
 
@@ -101,8 +75,8 @@ export default {
 			let quantity = this.quantity
 
 			axios
-				.post('api/orders/', { address, quantity, product_id })
-				.then(response => this.$router.push('/confirmation'))
+				.post('/orders/product', { address, quantity, product_id })
+				.then(response => window.location.href = '/confirmation')
 		},
 		checkUnits(e) {
 			if (this.quantity > this.product.units) {

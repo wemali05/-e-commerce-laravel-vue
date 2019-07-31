@@ -24,6 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
+
                     Big Stores
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -38,7 +39,7 @@
                             Drinks
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            
+
                                 @foreach ($categories as $category)
                                      <a class="dropdown-item" href="/products/category/{{ $category->id }}">{{ $category->name }}</a>
                                 @endforeach
@@ -85,15 +86,18 @@
                         @endguest
                         <li class="nav-link mb-2">
                             <a href=""><i class="fa fa-shopping-cart"></i></a>
-						</li> 
+						</li>
                     </ul>
                 </div>
             </div>
         </nav>
 
         <main class="py-4">
+          @include('partials.slug')
             @yield('content')
+
         </main>
+        @include('partials.footer')
     </div>
 </body>
 </html>

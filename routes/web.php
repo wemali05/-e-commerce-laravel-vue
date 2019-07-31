@@ -1,7 +1,7 @@
 <?php
 
-use App\Product;
-use App\Category;
+// use App\Product;
+// use App\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +15,30 @@ use App\Category;
 */
 
 Auth::routes();
+// products
 Route::get('/', 'ProductsController@index');
 Route::get('/products/{product}', 'ProductsController@show');
 Route::get('products/category/{category}',  'ProductsController@slug');
 
-Route::get('/checkout/{product}', function (Product $product) {
-    return view('pages.checkout', [
-        'product' => $product
-    ]);
+Route::middleware(['auth'])->group(function(){
+    // making an order
+Route::get('/checkout/{product}', 'ProductsController@check');
+// place order
+Route::post('/orders/product', 'OrderController@store');
+// confirmation message
+Route::get('/confirmation', 'OrderController@confirm');
+// sholl all user orders
+Route::get('/users/{user}', 'UserController@show');
 });
+
+
+
+
+
+
+
+
+
+
+
+
