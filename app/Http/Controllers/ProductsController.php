@@ -118,4 +118,9 @@ class ProductsController extends Controller
     public function check(Product $product) {
         return view('pages.checkout',['product' => $product]);
     }
+    // public function apiProductsPaginated()
+    // {
+    //     $products = Product::paginate(6);
+    //     return response()->json($products, 200);
+    // }
 }
