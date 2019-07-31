@@ -20,7 +20,7 @@
 				</div>
 			</div>
 		
-		<pagination-component :pagination="pagination" @paginate="fetchProducts()" :offset="4"></pagination-component>
+		
 	</div>
 </template>
 
@@ -33,31 +33,10 @@ export default {
 		}
 	},
 	data: function() {
-		return {
-			products: {},
-			pagination: {},
-			productsLoading: false
-		}
+		return {}
 	},
-	created() {
-		this.fetchProperties()
-	},
-	methods: {
-		fetchProducta() {
-			this.productsLoading = true
-			axios
-				.get('/api/products' + '/?page=' + this.pagination.current_page)
-				.then(resp => {
-					this.productsLoading = false
-					// this.products = resp.data.data
-					this.pagination = resp.data
-				})
-				.catch(err => {
-					this.productsLoading = false
-				})
-		
-		}
-	}
+	created() {},
+	methods: {}
 	
 }
 </script>
