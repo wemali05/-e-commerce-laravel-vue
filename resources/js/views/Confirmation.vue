@@ -4,16 +4,28 @@
                 <h2>
                     <span class="title"><strong>Thank You!</strong></span><br>
                     <span class="medium-text">Your order has been placed.</span><br>
-                    <router-link :to="{name: 'userboard'}" class="small-link">
+                     <a :href="`/users/${user.id}`" class="small-link">
                         See your orders
-                    </router-link>
+                    </a>
                 </h2>
             </div>
         </div>
     </template>
 
     <script>
-    export default {}
+    export default {
+        props:{
+            user:{
+                type:Object,
+                required:true
+            }
+        },
+        data(){
+            return{
+                
+            }
+        }
+    }
     </script>
 
     <style scoped>

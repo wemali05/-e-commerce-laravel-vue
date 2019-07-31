@@ -26,4 +26,15 @@
 	border-radius: 20px;
 	transition: 0.3s;
 }
+
+.small-text {
+	font-size: 18px;
+}
+.order-box {
+	border: 1px solid #cccccc;
+	padding: 10px 15px;
+}
+.title {
+	font-size: 36px;
+}
 </style>

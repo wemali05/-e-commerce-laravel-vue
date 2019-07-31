@@ -10,7 +10,7 @@
 					<span class="small-text float-right">Available Quantity: {{product.units}} ml</span>
 				</h4>
 				<br />
-				<hr />
+
 				<a :href="`/checkout/${product.id}`" class="col-md-4 btn btn-sm btn-primary float-right">Buy Now</a>
 			</div>
 		</div>

@@ -11,15 +11,24 @@ class ProductsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except(['index', 'show', 'slug']);
+        $this->middleware('auth')->except([
+            'index', 'show', 'slug', 'check'
+            ]);
     }
     public function index(Product $products)
     {
-       
+
         $categories = Category::all();
         return view('pages.all-products', [
             'products' => $products->paginate(6),
             'categories' => $categories,
+        ]);
+    }
+
+     public function show(Product $product)
+    {
+        return view('pages.single-product', [
+            'product' => $product,
         ]);
     }
 
@@ -42,15 +51,14 @@ class ProductsController extends Controller
     public function slug(Category $category)
     {
         $categoryProducts  = $category->products()->get();
-        return view('pages.categories-product', [
-            'categoryProducts' => $categoryProducts ,
-        ]);
+        return view('pages.categories-product',compact('categoryProducts') );
     }
-    public function show(Product $product)
-    {
-        return view('pages.single-product', [
-            'product' => $product
+
+    public function fetchProduct(Product $product){
+        return response()->json([
+            'data' => $product,
         ]);
+
     }
 
     public function uploadFile(Request $request)
@@ -105,5 +113,9 @@ class ProductsController extends Controller
     {
         $products = Product::paginate(6);
         return response()->json($products, 200);
+    }
+
+    public function check(Product $product) {
+        return view('pages.checkout',['product' => $product]);
     }
 }
