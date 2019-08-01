@@ -38448,56 +38448,40 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm._v("\n\n\t\n\n\t\t// "),
     _c("div", { staticClass: "row" }, [
-      _vm._v("\n\t\t// \t"),
       _c("div", { staticClass: "col-md-12" }, [
-        _vm._v("\n\t\t// \t\t"),
         _c(
           "div",
           { staticClass: "row" },
-          [
-            _vm._v("\n\t\t// \t\t\t"),
-            _vm._l(_vm.category, function(product, index) {
-              return _c(
-                "div",
-                { key: index, staticClass: "col-md-4 product-box" },
-                [
-                  _vm._v("\n\t\t// \t\t\t\t"),
-                  _c("img", {
-                    attrs: { src: product.image, alt: product.name }
-                  }),
-                  _vm._v("\n\t\t// \t\t\t\t"),
-                  _c("h5", [
-                    _vm._v("\n\t\t// \t\t\t\t\t"),
-                    _c(
-                      "span",
-                      { staticClass: "small-text text-muted float-right" },
-                      [_vm._v("$ " + _vm._s(product.price))]
-                    ),
-                    _vm._v("\n\t\t// \t\t\t\t")
-                  ]),
-                  _vm._v("\n\t\t\t\t\t\t\n\t\t// \t\t\t\t\t"),
+          _vm._l(_vm.category, function(product, index) {
+            return _c(
+              "div",
+              { key: index, staticClass: "col-md-4 product-box" },
+              [
+                _c("img", { attrs: { src: product.image, alt: product.name } }),
+                _vm._v(" "),
+                _c("h5", [
                   _c(
-                    "a",
-                    {
-                      staticClass:
-                        "col-md-4 btn btn-sm btn-primary float-right",
-                      attrs: { href: "/products/" + product.id }
-                    },
-                    [_vm._v("Buy Now")]
-                  ),
-                  _vm._v("\n\t\t\t\t\t\t\n\t\t// \t\t\t")
-                ]
-              )
-            }),
-            _vm._v("\n\t\t// \t\t")
-          ],
-          2
-        ),
-        _vm._v("\n\t\t// \t")
-      ]),
-      _vm._v("\n\t\t// ")
+                    "span",
+                    { staticClass: "small-text text-muted float-right" },
+                    [_vm._v("$ " + _vm._s(product.price))]
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "col-md-4 btn btn-sm btn-primary float-right",
+                    attrs: { href: "/products/" + product.id }
+                  },
+                  [_vm._v("Buy Now")]
+                )
+              ]
+            )
+          }),
+          0
+        )
+      ])
     ])
   ])
 }
@@ -51850,8 +51834,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/kip/e-vue/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/kip/e-vue/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/user/Documents/code/ecom/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/user/Documents/code/ecom/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

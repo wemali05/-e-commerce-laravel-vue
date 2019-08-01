@@ -36964,7 +36964,7 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/kip/e-vue/resources/js/bootstrap.js */"./resources/js/bootstrap.js");
+module.exports = __webpack_require__(/*! /Users/user/Documents/code/ecom/resources/js/bootstrap.js */"./resources/js/bootstrap.js");
 
 
 /***/ })

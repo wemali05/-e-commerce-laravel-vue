@@ -27,7 +27,7 @@ Route::get('/checkout/{product}', 'ProductsController@check');
 Route::post('/orders/product', 'OrderController@store');
 // confirmation message
 Route::get('/confirmation', 'OrderController@confirm');
-// sholl all user orders
+// show all user orders
 Route::get('/users/{user}', 'UserController@show');
 });
 

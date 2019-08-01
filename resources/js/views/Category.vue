@@ -1,25 +1,25 @@
     <template>
 	<div class="container">
-	
-		
-	
-			// <div class="row">
-			// 	<div class="col-md-12">
-			// 		<div class="row">
-			// 			<div class="col-md-4 product-box" v-for="(product,index) in category" :key="index">
-			// 				<img :src="product.image" :alt="product.name" />
-			// 				<h5>
-			// 					<span class="small-text text-muted float-right">$ {{ product.price}}</span>
-			// 				</h5>
-							
-			// 					<a  class="col-md-4 btn btn-sm btn-primary float-right" :href="`/products/${product.id}`">Buy Now</a>
-							
-			// 			</div>
-			// 		</div>
-			// 	</div>
-			// </div>
+
+
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-4 product-box" v-for="(product,index) in category" :key="index">
+							<img :src="product.image" :alt="product.name" />
+							<h5>
+								<span class="small-text text-muted float-right">$ {{ product.price}}</span>
+							</h5>
+
+								<a  class="col-md-4 btn btn-sm btn-primary float-right" :href="`/products/${product.id}`">Buy Now</a>
+
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-	
+
 </template>
 
 <script>
