@@ -8,7 +8,7 @@
                     <div class="col-md-12">
                         <br>
                         <div class="row">
-                            <div class="col-md-4 product-box" v-for="(order,index) in orders" @key="index">
+                            <div class="col-md-3 product-box" v-for="(order,index) in orders" @key="index">
                                 <img :src="order.product.image" :alt="order.product.name">
                                 <h5><span v-html="order.product.name"></span><br>
                                     <span class="small-text text-muted">$ {{order.product.price}}</span>
