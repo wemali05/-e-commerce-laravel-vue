@@ -4,8 +4,7 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 
-Vue.component('modal-comp', require('.views/Test.vue').default);
-Vue.component('all-products-component', require('./views/Home.vue').default);
+Vue.component('modal-component', require('./views/Test.vue').default);
 Vue.component('categories-products-component', require('./views/Category.vue').default);
 Vue.component('single-product-component', require('./views/SingleProduct.vue').default);
 Vue.component('checkout-product-component', require('./views/Checkout.vue').default);
