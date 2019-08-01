@@ -31,6 +31,16 @@ img {
 	padding: 5px;
 	transition: 0.3s;
 }
+.zoom {
+padding: 40px;
+transition: transform .9s;
+margin: 0 auto;
+}
+.zoom:hover {
+-ms-transform: scale(1.5); /* IE 9 */
+-webkit-transform: scale(1.5); /* Safari 3-8 */
+transform: scale(1.5);
+}
 /*
 .small-text {
 	font-size: 18px;

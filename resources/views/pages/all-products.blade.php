@@ -11,18 +11,19 @@
 			<div class="col-md-12">
 			    <div class="row">
                         @foreach($products as $product)
-                                    <div class="col-md-3 product-box">
-
-                                        <a href="/products/{{$product->id}}">
-                                            <img src="{{$product->image}}" alt="{{$product->name}}" />
-                                            <h5>
+                            <div class="col-md-3 product-box">
+                        <a href="/products/{{$product->id}}">
+                                            <img class="zoom" src="{{$product->image}}" alt="{{$product->name}}" />
+                                            <h2>
                                                 <span>{{$product->name}}</span>
-                                                <span class="small-text text-muted float-right">$ {{$product->price}}</span>
-                                            </h5>
-                                            <button class="col-md-4 btn btn-sm btn-primary float-right">Buy Now</button>
-                                        </a>
+                                            </h2>
+                                                <p class="small-text text-muted">$ {{$product->price}}</span>
+                                        </p>
 
-                                    </div>
+                                        </a>
+                                    <a  href="/checkout/{{$product->id}}" class="col-md-4 btn btn-sm btn-primary float-center">Buy Now</a>
+
+                             </div>
 
                     @endforeach
 		       </div>
