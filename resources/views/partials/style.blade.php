@@ -10,9 +10,11 @@
 img {
   width: 297px;
   margin-top: 10px;
-}
-.product-box  a{
 
+}
+.product-box  a img{
+padding-left: 40px;
+padding-right: 70px;
 }
 .hero-section {
 	height: 10vh;
