@@ -1,12 +1,13 @@
-<div class="container-fluid hero-section d-flex align-content-center justify-content-center flex-wrap ml-auto">
-			<h2 class="title">Welcome to the bigStore</h2>
-</div>
-<div class="row justify-content-center">
+
+<div class="row justify-content-center mb-3">
 	<ul>
       @foreach($categories as $category)
 				<li class="cli" >
-					<a href="/products/category/{{$category->id}}">{{ $category->name}}</a>
+                    <a class="btn btn-outline-info btn-sm" style="border-radius: 0.2rem;" href="/products/category/{{$category->id}}">
+                        {{ $category->name}}
+                    </a>
 				</li>
        @endforeach
     </ul>
 </div>
+

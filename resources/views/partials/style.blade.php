@@ -29,11 +29,9 @@ img {
 	margin: 0px 10px 5px 0px;
 	display: inline;
 	padding: 5px;
-	border: 1px solid #ddd;
-	border-radius: 20px;
 	transition: 0.3s;
 }
-
+/*
 .small-text {
 	font-size: 18px;
 }
@@ -78,7 +76,7 @@ span.elementor-icon-list-text{
 .elementor *, .elementor :after, .elementor :before {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-}
+} */
 
 </style>
 
